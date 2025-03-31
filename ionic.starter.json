@@ -1,5 +1,5 @@
 {
-  "name": "Blank Starter",
+  "name": "Nomnio Weather App Code Challenge",
   "baseref": "main",
   "tarignore": [
     "node_modules",
