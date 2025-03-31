@@ -1,3 +1,20 @@
+@use 'theme/mixins' as mixins;
+
+h1 {
+    @include mixins.title-style;
+}
+
+p {
+    @include mixins.text-style;
+}
+
+.secondary-text {
+    @include mixins.secondary-text-style;
+}
+
+.error-message {
+    @include mixins.error-style;
+}
 /*
  * App Global CSS
  * ----------------------------------------------------------------------------
