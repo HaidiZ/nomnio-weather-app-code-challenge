@@ -1,0 +1,42 @@
+@mixin title-style {
+    font-family: var(--ion-font-family);
+    font-weight: var(--ion-title-font-weight);
+    font-size: var(--ion-title-font-size);
+    color: var(--ion-title-color);
+    line-height: var(--ion-title-line-height);
+    letter-spacing: var(--ion-title-letter-spacing);
+    text-align: var(--ion-title-text-align);
+    vertical-align: var(--ion-title-vertical-align);
+}
+
+@mixin text-style {
+    font-family: var(--ion-font-family);
+    font-weight: var(--ion-text-font-weight);
+    font-size: var(--ion-text-font-size);
+    color: var(--ion-text-color);
+    line-height: var(--ion-text-line-height);
+    letter-spacing: var(--ion-text-letter-spacing);
+    text-align: var(--ion-text-text-align);
+    vertical-align: var(--ion-text-vertical-align);
+}
+
+@mixin secondary-text-style {
+    font-family: var(--ion-font-family);
+    font-weight: var(--ion-secondary-text-font-weight);
+    font-size: var(--ion-secondary-text-font-size);
+    color: var(--ion-secondary-text-color);
+    line-height: var(--ion-secondary-text-line-height);
+    letter-spacing: var(--ion-secondary-text-letter-spacing);
+    vertical-align: var(--ion-secondary-text-vertical-align);
+}
+
+@mixin error-style {
+    font-family: var(--ion-font-family);
+    font-weight: var(--ion-error-font-weight);
+    font-size: var(--ion-error-font-size);
+    color: var(--ion-error-color);
+    line-height: var(--ion-error-line-height);
+    letter-spacing: var(--ion-error-letter-spacing);
+    text-align: var(--ion-error-text-align);
+    vertical-align: var(--ion-error-vertical-align);
+}
