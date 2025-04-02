@@ -20,14 +20,14 @@
     vertical-align: var(--ion-text-vertical-align);
 }
 
-@mixin secondary-text-style {
+@mixin bold-text-style {
     font-family: var(--ion-font-family);
-    font-weight: var(--ion-secondary-text-font-weight);
-    font-size: var(--ion-secondary-text-font-size);
-    color: var(--ion-secondary-text-color);
-    line-height: var(--ion-secondary-text-line-height);
-    letter-spacing: var(--ion-secondary-text-letter-spacing);
-    vertical-align: var(--ion-secondary-text-vertical-align);
+    font-weight: var(--ion-bold-text-font-weight);
+    font-size: var(--ion-bold-text-font-size);
+    color: var(--ion-bold-text-color);
+    line-height: var(--ion-bold-text-line-height);
+    letter-spacing: var(--ion-bold-text-letter-spacing);
+    vertical-align: var(--ion-bold-text-vertical-align);
 }
 
 @mixin error-style {
