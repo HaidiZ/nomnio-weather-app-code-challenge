@@ -1,0 +1,24 @@
+<div class="content-container">
+  <div class="content-container__layout">
+    <div>
+      <h1 class="content-container__title">Select location</h1>
+      <p>Select location to display weather information.</p>
+    </div>
+
+    <app-location-weather-info></app-location-weather-info>
+    
+    <div class="content-container__location-selector" (click)="toggleSelector()">
+      <p class="bold-text">{{ selectedLocation }}</p>
+      <ion-icon name="chevron-forward" class="content-container__icon"></ion-icon>
+    </div>
+  </div>
+
+  <div *ngIf="isLocationSelectorVisible" class="dropdown-container">
+    <p>Select location</p>
+    <ul>
+      <li (click)="selectLocation('Location 1')" class="bold-text">Location 1</li>
+      <li (click)="selectLocation('Invalid Location')" class="bold-text">Invalid location</li>
+      <button (click)="toggleSelector()" class="bold-text">Cancel</button>
+    </ul>
+  </div>
+</div>

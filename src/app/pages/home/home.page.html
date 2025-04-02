@@ -1,14 +1,24 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" class="ion-no-border">
   <ion-toolbar>
+    <div class="header-container">
+      <div class="header-content">
+        <div class="header-content__layout">
+          <div class="header-content__img">
+            <img src="../../../assets/icons/sun.svg" alt="Nomnio logo">
+          </div>
+          <div>
+            <ion-title class="header-content__title">Nomnio Weather</ion-title>
+          </div>
+        </div>
+        <div class="header-content__layout">
+          <p class="header-content__lang">EN</p>
+          <ion-icon name="chevron-down" class="header-content__icon"></ion-icon>
+        </div>
+      </div>
+    </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-  </div>
+ <app-location-selector></app-location-selector>
 </ion-content>
