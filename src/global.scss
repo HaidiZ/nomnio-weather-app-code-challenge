@@ -1,15 +1,15 @@
 @use 'theme/mixins' as mixins;
 
-h1 {
+ion-title, h1 {
     @include mixins.title-style;
 }
 
-p {
+p, .text {
     @include mixins.text-style;
 }
 
-.secondary-text {
-    @include mixins.secondary-text-style;
+.bold-text {
+    @include mixins.bold-text-style;
 }
 
 .error-message {
@@ -52,3 +52,10 @@ p {
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
+
+// @media (prefers-color-scheme: dark) {
+//     :root {
+//         --ion-background-color: #E8E8E8 !important;
+//         --ion-color-primary-rgb: 34, 31, 31;
+//     }
+// }
