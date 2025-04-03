@@ -1,16 +1,17 @@
-import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonIcon } from '@ionic/angular/standalone';
+import { Component, OnInit } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
 import { LocationSelectorComponent } from 'src/app/components/location-selector/location-selector-component.component';
 
 
 @Component({
   selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonIcon, LocationSelectorComponent],
+  templateUrl: './home.page.html',
+  styleUrls: ['./home.page.scss'],
+  imports: [IonicModule, LocationSelectorComponent]
 })
+export class HomePage implements OnInit {
 
-export class HomePage {
   constructor() {}
-}
 
+  ngOnInit() {}
+}

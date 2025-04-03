@@ -5,20 +5,23 @@
       <p>Select location to display weather information.</p>
     </div>
 
-    <app-location-weather-info></app-location-weather-info>
-    
-    <div class="content-container__location-selector" (click)="toggleSelector()">
-      <p class="bold-text">{{ selectedLocation }}</p>
-      <ion-icon name="chevron-forward" class="content-container__icon"></ion-icon>
+    <app-weather-information *ngIf="!hasError"></app-weather-information>
+
+    <p *ngIf="hasError" class="error-message">An error occured.<br/> Please select a different location.</p>
+
+    <div id="open-action-sheet" class="content-container__location-selector">
+      <p class="bold-text">{{ selectedLocation$ | async }}</p>
+
+      <ng-container *ngIf="(loadingState$ | async); else chevronIcon">
+        <div class="spinner"></div>
+      </ng-container>
+
+      <ng-template #chevronIcon>
+        <ion-icon name="chevron-forward" class="content-container__icon"></ion-icon>
+      </ng-template>
     </div>
   </div>
 
-  <div *ngIf="isLocationSelectorVisible" class="dropdown-container">
-    <p>Select location</p>
-    <ul>
-      <li (click)="selectLocation('Location 1')" class="bold-text">Location 1</li>
-      <li (click)="selectLocation('Invalid Location')" class="bold-text">Invalid location</li>
-      <button (click)="toggleSelector()" class="bold-text">Cancel</button>
-    </ul>
-  </div>
+  <ion-action-sheet trigger="open-action-sheet" class="location-selector" header="Select location"
+    [buttons]="locationButtons"></ion-action-sheet>
 </div>

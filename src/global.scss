@@ -1,10 +1,12 @@
 @use 'theme/mixins' as mixins;
 
-ion-title, h1 {
+ion-title,
+h1 {
     @include mixins.title-style;
 }
 
-p, .text {
+p,
+.text {
     @include mixins.text-style;
 }
 
@@ -15,6 +17,46 @@ p, .text {
 .error-message {
     @include mixins.error-style;
 }
+
+.action-sheet-container {
+    --ion-padding: 24px 20px 24px 20px;
+}
+
+.action-sheet-container.sc-ion-action-sheet-md {
+    --background: var(--bg-color-white);
+}
+
+ion-action-sheet.location-selector {
+    --background: var(--bg-color-white);
+    --backdrop-opacity: 0.6;
+    --button-background-selected: #e97223;
+    --button-color: #000000;
+    --color: #221F1F;
+    --action-sheet-border-radius: 10px;
+    --ion-color-danger: #000000;
+}
+
+.action-sheet-group:first-child {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.action-sheet-title {
+    font-size: 14px !important;
+    color: #221F1F;
+    @include mixins.text-style;
+}
+
+.action-sheet-button {
+    font-size: 14px !important;
+    color: #221F1F;
+    @include mixins.bold-text-style;
+}
+
+.action-sheet-cancel {
+   margin: 8px 0;
+}
+
 /*
  * App Global CSS
  * ----------------------------------------------------------------------------
@@ -52,10 +94,3 @@ p, .text {
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
-
-// @media (prefers-color-scheme: dark) {
-//     :root {
-//         --ion-background-color: #E8E8E8 !important;
-//         --ion-color-primary-rgb: 34, 31, 31;
-//     }
-// }

@@ -1,0 +1,12 @@
+<div *ngIf="(weatherData$ | async) as weatherData" class="weather-info-container">
+  <div>
+    <p class="bold-text weather-info-container__city">{{ weatherData.name }}</p>
+    <p>{{ (weatherData.dt * 1000) | date: 'd. M. y' }} ob {{ weatherData.dt | date: 'H:mm' }}</p>
+    <p>{{ weatherData.weather[0].main }}</p>
+    <p>Current temperature: {{ weatherData.main.temp }} °C</p>
+    <p>Feels like: {{ weatherData.main.feels_like }}°C</p>
+  </div>
+  <div>
+    <img *ngIf="(iconUrl$ | async) as iconUrl" [src]="iconUrl" alt="Weather icon">
+  </div>
+</div>
