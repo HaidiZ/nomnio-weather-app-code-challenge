@@ -9,7 +9,7 @@ describe('LocationWeatherInfoComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ LocationWeatherInfoComponent ],
+      declarations: [LocationWeatherInfoComponent],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
