@@ -15,6 +15,11 @@ export class WeatherService {
     return this.http.get(url);
   }
 
+  getWeatherByCoordinates(lat: number, lon: number): Observable<any> {
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${this.API_KEY}&units=metric`;
+    return this.http.get(url);
+  }
+
   getIcon(iconCode: string): Observable<any> {
     const url =`http://openweathermap.org/img/wn/' + ${iconCode} + '@1x.png`;
     return this.http.get(url);
