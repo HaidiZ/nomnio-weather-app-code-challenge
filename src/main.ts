@@ -10,13 +10,19 @@ import { provideStore } from '@ngrx/store';
 import { appReducer } from './app/store/reducers/app.reducer';
 import { provideEffects } from '@ngrx/effects';
 import { WeatherEffects } from './app/store/effects/weather.effects';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { importProvidersFrom } from '@angular/core';
 import { weatherReducer } from './app/store/reducers/weather.reducer';
+import { TranslateLoader, provideTranslateService } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 addIcons({
   chevronDown, chevronForward
 });
+
+export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
+  return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
+}
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -25,6 +31,15 @@ bootstrapApplication(AppComponent, {
     provideRouter(routes, withPreloading(PreloadAllModules)),
     provideStore({ app: appReducer, weather: weatherReducer }),
     provideEffects([WeatherEffects]),
-    importProvidersFrom(HttpClientModule)
+    importProvidersFrom(HttpClientModule),
+    provideTranslateService({
+      defaultLanguage: 'en',
+      useDefaultLang: true,
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
   ],
 });

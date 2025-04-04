@@ -1,0 +1,22 @@
+{
+    "SELECT_LOCATION": "Wählen Sie einen Standort",
+    "SELECT_LOCATION_DESCRIPTION": "Wählen Sie einen Ort aus, um Wetterinformationen anzuzeigen.",
+    "ERROR_MESSAGE": "Es ist ein Fehler aufgetreten. Bitte wählen Sie einen anderen Standort.",
+    "CURRENT_LOCATION": "Aktueller Standort",
+    "INVALID_LOCATION": "Ungültiger Standort",
+    "TITLE": "Nomnio Wetter",
+    "WEATHER": {
+        "CLEAR": "Klar",
+        "RAIN": "Regen",
+        "CLOUDY": "Bewölkt",
+        "SUNNY": "Sonnig"
+    },
+    "AT_TIME": "um",
+    "CURRENT_TEMPERATURE": "Aktuelle Temperatur",
+    "FEELS_LIKE": "Gefühlt wie",
+    "SELECT_LANGUAGE": "Sprache auswählen",
+    "CANCEL": "Abbrechen",
+    "SLOVENIAN": "Slovenščina",
+    "ENGLISH": "English",
+    "GERMAN": "Deutsch"
+}
