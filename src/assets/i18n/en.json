@@ -4,7 +4,8 @@
     "ERROR_MESSAGE": "An error occurred. Please select a different location.",
     "CURRENT_LOCATION": "Current Location",
     "INVALID_LOCATION": "Invalid location",
-    "TITLE": "Nomnio Weather",   
+    "TITLE": "Nomnio Weather",
+    "LOADING_DATA": "Loading data ...",
     "WEATHER": {
         "CLEAR": "Clear",
         "RAIN": "Rain",
