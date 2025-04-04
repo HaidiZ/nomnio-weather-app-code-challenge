@@ -2,62 +2,62 @@
 
 ion-title,
 h1 {
-    @include mixins.title-style;
+  @include mixins.title-style;
 }
 
 p,
 .text {
-    @include mixins.text-style;
+  @include mixins.text-style;
 }
 
 .bold-text {
-    @include mixins.bold-text-style;
+  @include mixins.bold-text-style;
 }
 
 .error-message {
-    @include mixins.error-style;
+  @include mixins.error-style;
 }
 
 .action-sheet-container {
-    --ion-padding: 24px 20px 24px 20px;
+  --ion-padding: 24px 20px 24px 20px;
 }
 
 .action-sheet-container.sc-ion-action-sheet-md {
-    --background: var(--bg-color-white);
+  --background: var(--bg-color-white);
 }
 
 ion-action-sheet.location-selector {
-    --background: var(--bg-color-white);
-    --backdrop-opacity: 0.6;
-    --button-background-selected: #e97223;
-    --button-color: #000000;
-    --color: #221F1F;
-    --action-sheet-border-radius: 10px;
-    --ion-color-danger: #000000;
+  --background: var(--bg-color-white);
+  --backdrop-opacity: 0.6;
+  --button-background-selected: #e97223;
+  --button-color: #000000;
+  --color: #221F1F;
+  --action-sheet-border-radius: 10px;
+  --ion-color-danger: #000000;
 }
 
 .action-sheet-group:first-child {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .action-sheet-title {
-    font-size: 14px !important;
-    color: #221F1F !important;
-    @include mixins.text-style;
+  font-size: 14px !important;
+  color: #221F1F !important;
+  @include mixins.text-style;
 }
 
 .action-sheet-button {
-    font-size: 14px !important;
-    color: #221F1F !important;
-    @include mixins.bold-text-style;
+  font-size: 14px !important;
+  color: #221F1F !important;
+  @include mixins.bold-text-style;
 }
 
 .action-sheet-cancel {
-   margin: 8px 0;
+  margin: 8px 0;
 }
 
-/*
+/* 
  * App Global CSS
  * ----------------------------------------------------------------------------
  * Put style rules here that you want to apply globally. These styles are for
