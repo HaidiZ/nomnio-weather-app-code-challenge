@@ -14,5 +14,3 @@ export const setLoading = createAction(
     '[App] Set Loading',
     props<{ loading: boolean }>()
 );
-
-
