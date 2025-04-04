@@ -17,7 +17,7 @@ describe('HomePage', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
-        StoreModule.forRoot({ app: appReducer }), 
+        StoreModule.forRoot({ app: appReducer }),
         TranslateModule.forRoot()
       ],
       declarations: [HomePage],

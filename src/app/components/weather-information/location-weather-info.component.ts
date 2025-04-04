@@ -14,7 +14,10 @@ export class LocationWeatherInfoComponent {
   weatherData$ = this.store.select(selectWeatherData);
   iconUrl$ = this.store.select(selectWeatherIconUrl);
 
-  constructor(private store: Store, private translateService: TranslateService) {
+  constructor(
+    private store: Store,
+    private translateService: TranslateService
+  ) {
     this.translateService.setDefaultLang('en');
     this.translateService.use('en');
   }

@@ -9,6 +9,7 @@ import { of } from 'rxjs';
 
 @Injectable()
 export class WeatherEffects {
+
   loadWeather$ = createEffect(() =>
     this.actions$.pipe(
       ofType(fetchWeather),
@@ -27,5 +28,9 @@ export class WeatherEffects {
     )
   );
 
-  constructor(private actions$: Actions, private weatherService: WeatherService, private store: Store) {}
+  constructor(
+    private actions$: Actions,
+    private weatherService: WeatherService,
+    private store: Store
+  ) {}
 }

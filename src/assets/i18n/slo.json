@@ -5,6 +5,7 @@
     "CURRENT_LOCATION": "Trenutna lokacija",
     "INVALID_LOCATION": "Nepravilna lokacija",
     "TITLE": "Nomnio Vreme",
+    "LOADING_DATA": "Nalagam podatke ...",
     "WEATHER": {
         "CLEAR": "Jasno",
         "RAIN": "Dež",

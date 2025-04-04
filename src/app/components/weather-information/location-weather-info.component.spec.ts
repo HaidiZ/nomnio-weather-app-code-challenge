@@ -24,13 +24,13 @@ describe('LocationWeatherInfoComponent', () => {
       declarations: [LocationWeatherInfoComponent],
       imports: [
         IonicModule.forRoot(),
-        StoreModule.forRoot({}) // Adding StoreModule to avoid errors with Store
+        StoreModule.forRoot({})
       ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(LocationWeatherInfoComponent);
     component = fixture.componentInstance;
-    store = TestBed.inject(Store); // Injecting the Store service to mock selectors
+    store = TestBed.inject(Store);
     fixture.detectChanges();
   }));
 
@@ -39,15 +39,14 @@ describe('LocationWeatherInfoComponent', () => {
   });
 
   it('should display weather data correctly when weatherData$ emits', () => {
-    // Mock the store's selector response
     spyOn(store, 'select').and.callFake((selector) => {
       if (selector === selectWeatherData) {
-        return of(mockWeatherData); // Simulate weather data being emitted
+        return of(mockWeatherData);
       }
       return of(null);
     });
 
-    fixture.detectChanges(); // Trigger change detection to update the view
+    fixture.detectChanges();
 
     const city = fixture.nativeElement.querySelector('.weather-info-container__city');
     const temperature = fixture.nativeElement.querySelector('p:nth-of-type(4)');
@@ -59,19 +58,18 @@ describe('LocationWeatherInfoComponent', () => {
   });
 
   it('should display weather icon when iconUrl$ emits', () => {
-    // Mock the store's selector response for icon URL
     spyOn(store, 'select').and.callFake((selector) => {
       if (selector === selectWeatherIconUrl) {
-        return of(mockIconUrl); // Simulate icon URL being emitted
+        return of(mockIconUrl);
       }
       return of(null);
     });
 
-    fixture.detectChanges(); // Trigger change detection to update the view
+    fixture.detectChanges();
 
     const iconElement = fixture.nativeElement.querySelector('img');
 
     expect(iconElement).toBeTruthy();
-    expect(iconElement.src).toBe(mockIconUrl); // The image source should match the mock URL
+    expect(iconElement.src).toContain('sun.svg');
   });
 });

@@ -15,6 +15,8 @@ import { importProvidersFrom } from '@angular/core';
 import { weatherReducer } from './app/store/reducers/weather.reducer';
 import { TranslateLoader, provideTranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { locationReducer } from './app/store/reducers/location.reducers';
+import { LocationEffects } from './app/store/effects/location.effects';
 
 addIcons({
   chevronDown, chevronForward
@@ -29,8 +31,8 @@ bootstrapApplication(AppComponent, {
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     provideIonicAngular(),
     provideRouter(routes, withPreloading(PreloadAllModules)),
-    provideStore({ app: appReducer, weather: weatherReducer }),
-    provideEffects([WeatherEffects]),
+    provideStore({ app: appReducer, weather: weatherReducer, location: locationReducer }),
+    provideEffects([WeatherEffects, LocationEffects]),
     importProvidersFrom(HttpClientModule),
     provideTranslateService({
       defaultLanguage: 'en',

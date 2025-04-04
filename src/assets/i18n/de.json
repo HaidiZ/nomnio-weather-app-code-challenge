@@ -5,6 +5,7 @@
     "CURRENT_LOCATION": "Aktueller Standort",
     "INVALID_LOCATION": "Ungültiger Standort",
     "TITLE": "Nomnio Wetter",
+    "LOADING_DATA": "Daten werden geladen ...",
     "WEATHER": {
         "CLEAR": "Klar",
         "RAIN": "Regen",

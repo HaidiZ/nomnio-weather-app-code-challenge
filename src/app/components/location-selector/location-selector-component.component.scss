@@ -3,61 +3,64 @@
     flex-direction: column;
     align-items: center;
     margin-top: 16px;
-
+  
     &__layout {
-        max-width: 335px;
-
-        h1 {
-            padding: 10px;
-            gap: 10px;
-            margin: 0;
-        }
-    }
-
-    p {
-        padding: 0 20px;
+      max-width: 335px;
+  
+      h1 {
+        padding: 10px;
         gap: 10px;
+        margin: 0;
+      }
     }
-
+  
+    p {
+      padding: 0 20px;
+      gap: 10px;
+    }
+  
     &__location-selector {
-        width: 335px;
-        height: 60px;
-        margin-top: 28px;
-        background-color: var(--bg-color-white);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 16px;
-        border-radius: 10px;
-
-        p {
-            padding: 0;
-            gap: 16px;
-        }
+      width: 335px;
+      height: 60px;
+      margin-top: 28px;
+      background-color: var(--bg-color-white);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 16px;
+      border-radius: 10px;
+  
+      p {
+        padding: 0;
+        gap: 16px;
+      }
     }
-
+  
     &__icon {
-        // height: 8px;
-        // width: 14px;
-        // padding: 0 20px;
+      // Nisem pomotoma pushala komentarjev, ampak če nastavim 
+      // to velikost je puščica veliko manjša kot je na dizajnu.
+      // height: 8px;
+      // width: 14px;
+      // padding: 0 20px;
     }
-}
-
-.spinner {
+  }
+  
+  .spinner {
     width: 20px;
     height: 20px;
     border: 2px solid transparent;
     border-top: 2px solid #221F1F;
     border-radius: 50%;
     animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
+  }
+  
+  @keyframes spin {
     0% {
-        transform: rotate(0deg);
+      transform: rotate(0deg);
     }
-
+  
     100% {
-        transform: rotate(360deg);
+      transform: rotate(360deg);
     }
-}
+  }
+  
