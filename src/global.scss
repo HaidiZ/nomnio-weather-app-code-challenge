@@ -43,13 +43,13 @@ ion-action-sheet.location-selector {
 
 .action-sheet-title {
     font-size: 14px !important;
-    color: #221F1F;
+    color: #221F1F !important;
     @include mixins.text-style;
 }
 
 .action-sheet-button {
     font-size: 14px !important;
-    color: #221F1F;
+    color: #221F1F !important;
     @include mixins.bold-text-style;
 }
 
