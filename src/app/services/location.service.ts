@@ -10,7 +10,8 @@ export class LocationService {
 
     getCurrentLocation(): Observable<any> {
         return new Observable(observer => {
-            // Commenting out the actual geolocation code
+            // Geocolation je blokiran za localhost, zato sem hardcodala,
+            // sem pa pustila kodo, da je viden moj pristop. :)
             /*
             if (navigator.geolocation) {
               navigator.geolocation.getCurrentPosition(
@@ -28,8 +29,6 @@ export class LocationService {
               observer.error('Geolocation is not supported by this browser.');
             }
             */
-
-            // 🔥 Hardcoded coordinates for Ptuj, Slovenia
             const fallbackLat = 46.4199;
             const fallbackLng = 15.8705;
             observer.next({ latitude: fallbackLat, longitude: fallbackLng });
