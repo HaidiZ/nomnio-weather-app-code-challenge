@@ -8,15 +8,15 @@ export interface AppState {
 }
 
 export const initialState: AppState = {
-  selectedLanguage: 'en',
+  selectedLanguage: 'EN',
   location: 'Select location',
   loadingState: false,
 };
 
-export const appReducer = createReducer(
+export const appReducer = createReducer (
   initialState,
   on(updateSelectedLanguage, (state, { language }) => ({
-    ...state,
+    ...state, 
     selectedLanguage: language,
   })),
   on(updateSelectedLocation, (state, { location }) => ({
@@ -28,3 +28,4 @@ export const appReducer = createReducer(
     loadingState: loading,
   }))
 );
+
