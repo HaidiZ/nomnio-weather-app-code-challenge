@@ -6,9 +6,6 @@ import { LocationWeatherInfoComponent } from '../weather-information/location-we
 import { setLoading, updateSelectedLocation } from 'src/app/store/actions/app.actions';
 import { fetchWeather } from 'src/app/store/actions/weather.actions';
 
-const mockLocationState = 'Ljubljana';
-const mockLoadingState = false;
-
 describe('LocationSelectorComponent', () => {
   let component: LocationSelectorComponent;
   let fixture: ComponentFixture<LocationSelectorComponent>;
@@ -16,10 +13,10 @@ describe('LocationSelectorComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ LocationSelectorComponent, LocationWeatherInfoComponent ],
+      declarations: [LocationSelectorComponent, LocationWeatherInfoComponent],
       imports: [
         IonicModule.forRoot(),
-        StoreModule.forRoot({})
+        StoreModule.forRoot({}),
       ],
     }).compileComponents();
 
@@ -37,26 +34,26 @@ describe('LocationSelectorComponent', () => {
     spyOn(store, 'dispatch');
 
     component.selectLocation('Ljubljana');
-    
-    expect(store.dispatch).toHaveBeenCalledWith(updateSelectedLocation({ location: 'Ljubljana' }));
+
     expect(store.dispatch).toHaveBeenCalledWith(setLoading({ loading: true }));
     expect(store.dispatch).toHaveBeenCalledWith(fetchWeather({ location: 'Ljubljana' }));
-    expect(component.hasError).toBeFalse();
+    expect(store.dispatch).toHaveBeenCalledWith(updateSelectedLocation({ location: 'Ljubljana' }));
+    expect(component.hasError).toBe(false); // ✅ Replaced toBeFalse()
   });
 
   it('should handle an invalid location selection and set error state', () => {
     spyOn(store, 'dispatch');
 
     component.selectLocation('Invalid location');
-    
-    expect(component.hasError).toBeTrue();
+
+    expect(component.hasError).toBe(true); // ✅ Replaced toBeTrue()
     expect(store.dispatch).not.toHaveBeenCalledWith(fetchWeather({ location: 'Invalid location' }));
     expect(component.selectedLocation$).toBeTruthy();
   });
 
   it('should display error message when hasError is true', () => {
     component.hasError = true;
-    fixture.detectChanges(); 
+    fixture.detectChanges();
 
     const errorMessage = fixture.nativeElement.querySelector('.error-message');
     expect(errorMessage).toBeTruthy();
