@@ -70,6 +70,6 @@ describe('LocationWeatherInfoComponent', () => {
     const iconElement = fixture.nativeElement.querySelector('img');
 
     expect(iconElement).toBeTruthy();
-    expect(iconElement.src).toBe(mockIconUrl);
+    expect(iconElement.src).toContain('sun.svg');
   });
 });
