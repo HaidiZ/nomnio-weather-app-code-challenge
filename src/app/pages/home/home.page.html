@@ -20,15 +20,10 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
- <app-location-selector></app-location-selector>
- <ion-action-sheet 
- trigger="open-language-action-sheet" 
- class="language-selector" 
- [header]="'SELECT_LANGUAGE' | translate"
- [buttons]="languageButtons"
- role="dialog"
-  aria-modal="true"
-  aria-labelledby="action-sheet-3-header"
- >
-</ion-action-sheet>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)"></ion-refresher>
+    <app-location-selector></app-location-selector>
+    <ion-action-sheet trigger="open-language-action-sheet" class="language-selector"
+      [header]="'SELECT_LANGUAGE' | translate" [buttons]="languageButtons" role="dialog" aria-modal="true"
+      aria-labelledby="action-sheet-3-header">
+    </ion-action-sheet>
 </ion-content>
