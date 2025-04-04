@@ -9,7 +9,7 @@ export interface AppState {
 
 export const initialState: AppState = {
   selectedLanguage: 'EN',
-  location: 'Select location',
+  location: 'SELECT_LOCATION',
   loadingState: false,
 };
 
