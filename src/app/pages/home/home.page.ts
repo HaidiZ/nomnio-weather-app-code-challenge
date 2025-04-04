@@ -7,6 +7,8 @@ import { AppState } from 'src/app/store/reducers/app.reducer';
 import { updateSelectedLanguage } from 'src/app/store/actions/app.actions';
 import { LocationSelectorComponent } from 'src/app/components/location-selector/location-selector-component.component';
 import { CommonModule } from '@angular/common';
+import { LoadingController } from '@ionic/angular';
+import { fetchCurrentLocation } from 'src/app/store/actions/location.actions';
 
 @Component({
   selector: 'app-home',
@@ -22,7 +24,8 @@ export class HomePage implements OnInit {
   constructor(
     private store: Store<AppState>,
     private translateService: TranslateService,
-    private cdRef: ChangeDetectorRef
+    private cdRef: ChangeDetectorRef,
+    private loadingController: LoadingController
   ) {
     this.selectedLanguage$ = this.store.select(state => state.selectedLanguage);
     this.translateService.setDefaultLang('en');
@@ -55,5 +58,18 @@ export class HomePage implements OnInit {
     this.translateService.use(lang);
     this.store.dispatch(updateSelectedLanguage({ language: lang }));
     this.updateLanguageButtons(lang);
+  }
+
+  async doRefresh(event: any) {
+    const loading = await this.loadingController.create({
+      message: 'Refreshing data...',
+    });
+    await loading.present();
+    this.store.dispatch(fetchCurrentLocation());
+
+    setTimeout(() => {
+      event.target.complete();
+      loading.dismiss();
+    }, 2000);
   }
 }
