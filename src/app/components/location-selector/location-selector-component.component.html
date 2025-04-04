@@ -12,7 +12,8 @@
     </p>
 
     <div id="open-action-sheet" class="content-container__location-selector">
-      <p class="bold-text">{{ translatedLocation$ | async }}</p>
+      <p *ngIf="!(loadingState$ | async)" class="bold-text">{{ translatedLocation$ | async }}</p>
+      <p *ngIf="(loadingState$ | async)">{{ 'LOADING_DATA' | translate }}</p>
       <ng-container *ngIf="(loadingState$ | async); else chevronIcon">
         <div class="spinner"></div>
       </ng-container>
@@ -27,6 +28,8 @@
     trigger="open-action-sheet" 
     class="location-selector" 
     [header]="'SELECT_LOCATION' | translate"
-    [buttons]="locationButtons">
+    [buttons]="locationButtons"
+    aria-labelledby="action-sheet-3-header" 
+    >
   </ion-action-sheet>
 </div>
