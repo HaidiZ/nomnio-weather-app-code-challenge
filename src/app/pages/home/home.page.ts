@@ -42,7 +42,6 @@ export class HomePage implements OnInit {
 
   updateLanguageButtons(language: string = 'en') {
     this.translateService.get('CANCEL').subscribe((cancelText: string) => {
-
       this.languageButtons = [
         { text: 'Slovenščina', handler: () => this.changeLanguage('slo') },
         { text: 'English', handler: () => this.changeLanguage('en') },
