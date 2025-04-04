@@ -1,0 +1,23 @@
+{
+    "SELECT_LOCATION": "Izberite lokacijo",
+    "SELECT_LOCATION_DESCRIPTION": "Izberite lokacijo za prikaz vremenskih podatkov.",
+    "ERROR_MESSAGE": "Prišlo je do napake. Prosimo, izberite drugo lokacijo.",
+    "CURRENT_LOCATION": "Trenutna lokacija",
+    "INVALID_LOCATION": "Nepravilna lokacija",
+    "TITLE": "Nomnio Vreme",
+    "LOADING_DATA": "Nalagam podatke ...",
+    "WEATHER": {
+        "CLEAR": "Jasno",
+        "RAIN": "Dež",
+        "CLOUDY": "Oblačno",
+        "SUNNY": "Sončno"
+    },
+    "AT_TIME": "ob",
+    "CURRENT_TEMPERATURE": "Trenutna temperatura",
+    "FEELS_LIKE": "Občutek kot",
+    "SELECT_LANGUAGE": "Izberi jezik",
+    "CANCEL": "Prekliči",
+    "SLOVENIAN": "Slovenščina",
+    "ENGLISH": "English",
+    "GERMAN": "Deutsch"
+}

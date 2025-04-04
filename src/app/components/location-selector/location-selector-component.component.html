@@ -1,0 +1,43 @@
+<div class="content-container">
+  <div class="content-container__layout">
+    <div>
+      <h1 class="content-container__title">
+        {{ 'SELECT_LOCATION' | translate }}
+      </h1>
+      <p *ngIf="!hasError && isDescShown">
+        {{ 'SELECT_LOCATION_DESCRIPTION' | translate }}
+      </p>
+    </div>
+
+    <app-weather-information *ngIf="!hasError"></app-weather-information>
+
+    <p *ngIf="hasError" class="error-message">
+      {{ 'ERROR_MESSAGE' | translate }}
+    </p>
+
+    <div id="open-action-sheet" class="content-container__location-selector">
+      <p *ngIf="!(loadingState$ | async)" class="bold-text">
+        {{ translatedLocation$ | async }}
+      </p>
+      <p *ngIf="(loadingState$ | async)">
+        {{ 'LOADING_DATA' | translate }}
+      </p>
+
+      <ng-container *ngIf="(loadingState$ | async); else chevronIcon">
+        <div class="spinner"></div>
+      </ng-container>
+
+      <ng-template #chevronIcon>
+        <ion-icon name="chevron-forward" class="content-container__icon"></ion-icon>
+      </ng-template>
+    </div>
+  </div>
+
+  <ion-action-sheet 
+    trigger="open-action-sheet"
+    class="location-selector"
+    [header]="'SELECT_LOCATION' | translate"
+    [buttons]="locationButtons"
+    aria-labelledby="action-sheet-3-header">
+  </ion-action-sheet>
+</div>

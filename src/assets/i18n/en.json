@@ -1,0 +1,23 @@
+{
+    "SELECT_LOCATION": "Select location",
+    "SELECT_LOCATION_DESCRIPTION": "Select location to display weather information.",
+    "ERROR_MESSAGE": "An error occurred. Please select a different location.",
+    "CURRENT_LOCATION": "Current Location",
+    "INVALID_LOCATION": "Invalid location",
+    "TITLE": "Nomnio Weather",
+    "LOADING_DATA": "Loading data ...",
+    "WEATHER": {
+        "CLEAR": "Clear",
+        "RAIN": "Rain",
+        "CLOUDY": "Cloudy",
+        "SUNNY": "Sunny"
+    },
+    "AT_TIME": "at",
+    "CURRENT_TEMPERATURE": "Current temperature",
+    "FEELS_LIKE": "Feels like",
+    "SELECT_LANGUAGE": "Select language",
+    "CANCEL": "Cancel",
+    "SLOVENIAN": "Slovenščina",
+    "ENGLISH": "English",
+    "GERMAN": "Deutsch"
+}

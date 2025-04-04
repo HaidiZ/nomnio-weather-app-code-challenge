@@ -1,0 +1,41 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <div class="header-container">
+      <div class="header-content">
+        <div class="header-content__layout">
+          <div class="header-content__img">
+            <img src="../../../assets/icons/sun.svg" alt="Nomnio logo">
+          </div>
+          <div>
+            <ion-title class="header-content__title">
+              {{ 'TITLE' | translate }}
+            </ion-title>
+          </div>
+        </div>
+
+        <div id="open-language-action-sheet" class="header-content__layout">
+          <p class="header-content__lang">
+            {{ selectedLanguage$ | async | uppercase }}
+          </p>
+          <ion-icon name="chevron-down" class="header-content__icon"></ion-icon>
+        </div>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)"></ion-refresher>
+
+  <app-location-selector></app-location-selector>
+
+  <ion-action-sheet
+    trigger="open-language-action-sheet"
+    class="language-selector"
+    [header]="'SELECT_LANGUAGE' | translate"
+    [buttons]="languageButtons"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="action-sheet-3-header">
+  </ion-action-sheet>
+</ion-content>

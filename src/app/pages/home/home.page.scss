@@ -1,0 +1,86 @@
+.header-container {
+  display: flex;
+  justify-content: center;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0;
+  width: 335px;
+  height: 56px;
+
+  &__title {
+    padding: 8px;
+  }
+
+  &__layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__img {
+    height: 24px;
+    width: 24px;
+  }
+
+  &__icon {
+    // Nisem pomotoma pushala komentarjev, ampak če nastavim 
+    // to velikost je puščica veliko manjša kot je na dizajnu.
+    // width: 10px;
+    // height: 5px;
+    padding: 8px;
+  }
+
+  &__lang {
+    font-weight: 700;
+  }
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 16px;
+
+  &__layout {
+    max-width: 335px;
+
+    h1 {
+      padding: 10px;
+      gap: 10px;
+      margin: 0;
+    }
+  }
+
+  p {
+    padding: 0 20px;
+    gap: 10px;
+  }
+
+  &__location-selector {
+    width: 335px;
+    height: 60px;
+    margin-top: 28px;
+    background-color: var(--bg-color-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    border-radius: 10px;
+
+    p {
+      font-weight: 600;
+      padding: 0;
+      gap: 16px;
+    }
+  }
+
+  &__icon {
+    // height: 8px;
+    // width: 14px;
+    // padding: 0 20px;
+  }
+}
