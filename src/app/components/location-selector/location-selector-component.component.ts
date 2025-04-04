@@ -8,6 +8,8 @@ import { selectLoadingState, selectLocation } from 'src/app/store/selectors/app.
 import { setLoading, updateSelectedLocation } from 'src/app/store/actions/app.actions';
 import { Observable, Subscription, combineLatest, startWith, switchMap } from 'rxjs';
 import { TranslateModule, TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { selectWeatherData, selectWeatherError } from '../../store/selectors/weather.selectors';
+import { fetchCurrentLocation } from 'src/app/store/actions/location.actions';
 
 @Component({
   selector: 'app-location-selector',
@@ -18,7 +20,9 @@ import { TranslateModule, TranslateService, LangChangeEvent } from '@ngx-transla
 export class LocationSelectorComponent implements OnInit, OnDestroy {
   selectedLocation$: Observable<string>;
   translatedLocation$: Observable<string> | undefined;
+  weatherError$ = this.store.select(selectWeatherError);
   loadingState$ = this.store.select(selectLoadingState);
+  isDescShown: boolean = true;
   hasError = false;
   locationButtons: any[] = [];
   private langChangeSub?: Subscription;
@@ -28,6 +32,7 @@ export class LocationSelectorComponent implements OnInit, OnDestroy {
     private translateService: TranslateService,
     private cdRef: ChangeDetectorRef
   ) {
+
     this.selectedLocation$ = this.store.select(selectLocation);
     const langChange$ = this.translateService.onLangChange.pipe(startWith(null));
 
@@ -44,6 +49,11 @@ export class LocationSelectorComponent implements OnInit, OnDestroy {
         this.updateButtons();
       }
     );
+
+    this.weatherError$.subscribe((error) => {
+      this.hasError = !!error;
+      this.cdRef.markForCheck();
+    });
   }
 
   updateButtons() {
@@ -61,20 +71,25 @@ export class LocationSelectorComponent implements OnInit, OnDestroy {
         { text: cancelText, role: 'cancel' },
       ];
 
-      this.cdRef.detectChanges();
+      this.cdRef.markForCheck();
     });
   }
 
   selectLocation(location: string) {
-    if (location === 'Invalid location') {
+    this.store.dispatch(setLoading({ loading: true }));
+  
+    if (location === 'Invalid Location') {
       this.hasError = true;
+    } else if (location === 'Current Location'){
+      this.hasError = false;
+      this.store.dispatch(fetchCurrentLocation()); 
     } else {
       this.hasError = false;
-      this.store.dispatch(updateSelectedLocation({ location }));
-      this.store.dispatch(setLoading({ loading: true }));
+      this.isDescShown = false;
       this.store.dispatch(fetchWeather({ location }));
+      this.store.dispatch(updateSelectedLocation({ location }));
     }
-  }
+  }  
 
   ngOnDestroy() {
     this.langChangeSub?.unsubscribe();

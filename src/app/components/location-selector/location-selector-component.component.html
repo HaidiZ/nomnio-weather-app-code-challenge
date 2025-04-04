@@ -2,7 +2,7 @@
   <div class="content-container__layout">
     <div>
       <h1 class="content-container__title">{{ 'SELECT_LOCATION' | translate }}</h1>
-      <p>{{ 'SELECT_LOCATION_DESCRIPTION' | translate }}</p>
+      <p *ngIf="!hasError && isDescShown">{{ 'SELECT_LOCATION_DESCRIPTION' | translate }}</p>
     </div>
 
     <app-weather-information *ngIf="!hasError"></app-weather-information>
